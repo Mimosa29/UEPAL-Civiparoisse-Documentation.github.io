@@ -1,0 +1,1521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.uepal.fr/TECHNIQUE/LOGICIEL/distribution_code_composer.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Distribution de code - Documentation UEPAL Civiparoisse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#distribution-du-code-de-civiparoisse" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Documentation UEPAL Civiparoisse" class="md-header__button md-logo" aria-label="Documentation UEPAL Civiparoisse" data-md-component="logo">
+      
+  <img src="../../assets/uepal-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation UEPAL Civiparoisse
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Distribution de code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Documentation UEPAL Civiparoisse" class="md-nav__button md-logo" aria-label="Documentation UEPAL Civiparoisse" data-md-component="logo">
+      
+  <img src="../../assets/uepal-logo.svg" alt="logo">
+
+    </a>
+    Documentation UEPAL Civiparoisse
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Présentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Présentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Présentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/presentation_fonctionnelle.html" class="md-nav__link">
+        Périmètre fonctionnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/presentation_ecosysteme.html" class="md-nav__link">
+        Ecosystème projet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/presentation_livrables.html" class="md-nav__link">
+        Livrables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Technique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Technique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles.html" class="md-nav__link">
+        Rôles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Mail
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mail" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mail
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/mail.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/ecosysteme.html" class="md-nav__link">
+        Ecosystème
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/sendmail.html" class="md-nav__link">
+        Envoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/fetchmail.html" class="md-nav__link">
+        Réception
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Logiciel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Logiciel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Logiciel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Distribution de code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="distribution_code_composer.html" class="md-nav__link md-nav__link--active">
+        Distribution de code
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unification-des-extensions-civiparoisse" class="md-nav__link">
+    Unification des extensions Civiparoisse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-a-lutilisation-du-depot-git-comme-repository-composer" class="md-nav__link">
+    Préparation à l’utilisation du dépôt Git comme repository Composer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-a-disposition-du-package" class="md-nav__link">
+    Mise à disposition du package
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise à disposition du package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mise-a-disposition-via-depot-git" class="md-nav__link">
+    Mise à disposition via dépôt Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-a-disposition-via-site-web" class="md-nav__link">
+    Mise à disposition via site web
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="environnement_dev.html" class="md-nav__link">
+        Environnement de dev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="environnement_dev_env.html" class="md-nav__link">
+        Personnalisation environnement de dev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="importation.html" class="md-nav__link">
+        Importation de données
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Intégration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Intégration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Intégration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/etude_authentification.html" class="md-nav__link">
+        Authentification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3" type="checkbox" id="__nav_3_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/docker.html" class="md-nav__link">
+        Description générale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3_2" type="checkbox" id="__nav_3_4_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3_2">
+          Images
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Images" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Images
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/composer_base.html" class="md-nav__link">
+        Composer_base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/composer_files.html" class="md-nav__link">
+        Composer_files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/tools.html" class="md-nav__link">
+        tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/init.html" class="md-nav__link">
+        init
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/cron.html" class="md-nav__link">
+        cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/selfkeys.html" class="md-nav__link">
+        selfkeys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/httpd.html" class="md-nav__link">
+        httpd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/authenticator.html" class="md-nav__link">
+        authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/proxy.html" class="md-nav__link">
+        proxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/db_tls_server.html" class="md-nav__link">
+        db_tls_server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/db_tls_client.html" class="md-nav__link">
+        db_tls_client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/DOCKER/update.html" class="md-nav__link">
+        update
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/db_ssl.html" class="md-nav__link">
+        DB_SSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5" type="checkbox" id="__nav_3_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_5">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/maquettage.html" class="md-nav__link">
+        Maquettage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/ressources.html" class="md-nav__link">
+        Ressources utiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5_3" type="checkbox" id="__nav_3_4_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_5_3">
+          Chart Helm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chart Helm" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chart Helm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/description_generale.html" class="md-nav__link">
+        Description générale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/db_dbproxy.html" class="md-nav__link">
+        DB et DB proxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/httpd.html" class="md-nav__link">
+        Serveur web interne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/proxy_auth.html" class="md-nav__link">
+        Proxy et authenticateur
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/cron.html" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/volumes.html" class="md-nav__link">
+        Volumes (persistants)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRATION/KUBERNETES/HELM/reservations.html" class="md-nav__link">
+        Réservations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unification-des-extensions-civiparoisse" class="md-nav__link">
+    Unification des extensions Civiparoisse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-a-lutilisation-du-depot-git-comme-repository-composer" class="md-nav__link">
+    Préparation à l’utilisation du dépôt Git comme repository Composer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-a-disposition-du-package" class="md-nav__link">
+    Mise à disposition du package
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise à disposition du package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mise-a-disposition-via-depot-git" class="md-nav__link">
+    Mise à disposition via dépôt Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-a-disposition-via-site-web" class="md-nav__link">
+    Mise à disposition via site web
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="distribution-du-code-de-civiparoisse">Distribution du code de Civiparoisse</h1>
+<p>La distribution du code de Civiparoisse est un point crucial de l’industrialisation de l’installation des instances CiviCRM. On a déjà vu que Composer procurait une facilité d’installation et de mise à jour des instances de Drupal et du coeur de CiviCRM. Il est donc intéressant de capitaliser sur Composer. Pour ce faire, il était tout d’abord nécessaire d’unifier les modules civiparoisse existants en un seul, de le préparer pour devenir un package, puis générer les packages, et enfin les utiliser.</p>
+<h2 id="unification-des-extensions-civiparoisse">Unification des extensions Civiparoisse</h2>
+<p>L’unification des extensions Civiparoisse s’est imposée pour plusieurs raisons :</p>
+<ul>
+<li>
+<p>les différentes extensions avaient fonctionnellement le même but : fournir la gestion opérationnelle des paroisses, et dépendaient les unes des autres pour fournir la fonctionnalité globale : ces éventuelles interdépendances auraient pu devenir problématique pour la maintenance des extensions, d’aunt plus que certains éléments nécessitent des « racines » (par exemple : création d’un menu « racine » Uepal)</p>
+</li>
+<li>
+<p>différentes extensions peuvent conduire à de la duplication de code : en effet, certains mécanismes comme la gestion des menus, les settings, auraient pu être requis dans le temps par plusieurs modules</p>
+</li>
+<li>
+<p>la gestion de versions est facilitée : une seule version était déjà prévue pour tout le code via les tags git : on pourra donc aligner la version de info.xml et les tags</p>
+</li>
+<li>
+<p>les séparations qui semblaient nécessaires restent présentes, mais sont intégrées dans des niveaux plus profonds : on retrouve différents « namespaces », comme CRM_Civiparoisse_Parametres,CRM_Civiparoisse_Pages… Il en est de même pour les templates associés</p>
+</li>
+<li>
+<p>Composer peut utiliser un dépôt git comme un repository qui contient un package versionné avec les tags ; si on ne souhaite pas utiliser directement le dépôt git, il est également possible de générer un site web « statique » avec Satis (<a href="https://github.com/composer/satis">https://github.com/composer/satis</a> ) qui contient les packages générés, et utiliser ce site web comme repository Composer.</p>
+</li>
+</ul>
+<p>La fusion des différentes extensions a eu lieu dans l’issue 39.</p>
+<h2 id="preparation-a-lutilisation-du-depot-git-comme-repository-composer">Préparation à l’utilisation du dépôt Git comme repository Composer</h2>
+<p>Le code, une fois unifié, peut être utilisé assez simplement comme un package composer : il suffit d’un fichier composer.json qui indique le vendor et le nom du package, mis à la racine du code, comme par exemple :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;uepal/fr.uepalparoisse.civiparoisse&quot;</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Ensuite, les versions du code sont gérées avec des tags git qui prennent la forme du préfixe « v » auquel on accole le numéro de version (on obtient par exemple v0.0.1, v0.0.2,…). (Voir <a href="https://getcomposer.org/doc/articles/versions.md">https://getcomposer.org/doc/articles/versions.md</a> , <a href="https://getcomposer.org/doc/02-libraries.md">https://getcomposer.org/doc/02-libraries.md</a> et <a href="https://getcomposer.org/doc/05-repositories.md#vcs">https://getcomposer.org/doc/05-repositories.md#vcs</a> ).</p>
+<p>CiviCRM facilite la maintenance des extensions qui sont des packages Composer : en effet, CiviCRM inclut dans les lieux où il cherche les extensions le lieu « CMS_ROOT/vendor », qui n’est autre que le lieu où Composer met par défaut les fichiers issus d’un composer update. Il est à
+noter que le plugin d’installeur n’a pas fonctionné avec la procédure d’installation, car un répertoire ext situé à la racine du projet n’est pas scanné par défaut pour les extensions.</p>
+<h2 id="mise-a-disposition-du-package">Mise à disposition du package</h2>
+<p>On arrive ensuite à la distribution du package, qui peut être réalisée par deux approches complémentaires : distribuer le package via un dépôt git, et éventuellement distribuer le package via un site web.</p>
+<h3 id="mise-a-disposition-via-depot-git">Mise à disposition via dépôt Git</h3>
+<p>La mise à disposition via dépôt Git est plus ou moins obligatoire, dans la mesure où les générateurs de site web utiliseront le dépôt Git comme source.</p>
+<p>Il convient de ne pas utiliser directement comme source le dépôt de développement, car celui-ci contient l’historique du travail, dont les messages de commit, ainsi que les emails des développeurs : ces éléments n’ont pas besoin d’être vus par tous. On utilisera de ce fait un autre dépôt Git (sur Github) que l’on va utiliser uniquement pour publier les releases.</p>
+<p>La procédure de mise à disposition va faire intervenir trois dépôts au total :</p>
+<ul>
+<li>le dépôt de publication</li>
+<li>le dépôt des sources</li>
+<li>un dépôt local de travail</li>
+</ul>
+<p>La procédure est au bout du compte assez simple, on va travailler uniquement depuis le dépôt local de travail:</p>
+<ul>
+<li>on crée le dépôt de travail en clonant le dépôt de publication (git clone)</li>
+<li>on ajoute une référence au dépôt source au dépôt de travail : depuis le dépôt de travail :</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git remote add <span class="nb">source</span> &lt;url ou chemin du dépôt d’origine&gt;
+</code></pre></div>
+* depuis le dépôt de travail, on récupère le commit correspondant au tag, et qui sera mis dans <code>FETCH_HEAD</code> selon ce qu’on voit dans la sortie de la commande :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git fetch --depth <span class="m">1</span> <span class="nb">source</span> tags/v2.0
+</code></pre></div>
+<ul>
+<li>on crée une branche en orphan (sans historique et sans commit) depuis <code>FETCH_HEAD</code> :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git checkout --orphan release_v2 FETCH_HEAD
+</code></pre></div>
+<ul>
+<li>on commite : attention à l’identité configurée (nom et mail d’utilisateur), et au message de commit : ces infos seront publiées ensuite.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git commit -m <span class="s2">&quot;Release v2.0&quot;</span>
+</code></pre></div>
+<ul>
+<li>on taggue :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git tag v2.0 release_v2
+</code></pre></div>
+<ul>
+<li>on pousse le tag vers le dépôt de release (qui est origin depuis le clone) :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git push origin tags/v2.0
+</code></pre></div>
+<p>On peut tester ensuite le fonctionnement : on crée un composer.json du genre :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">&quot;repositories&quot;</span><span class="p">:[</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;vcs&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;file:///home/ubuntu/DRUPAL_TEST/test3/release&quot;</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}],</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nt">&quot;require&quot;</span><span class="p">:{</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nt">&quot;uepal/fr.uepalparoisse.civiparoisse&quot;</span><span class="p">:</span><span class="s2">&quot;2.0&quot;</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Et ensuite, on peut utiliser composer pour lister les packages :</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ubuntu@wpcore:~/DRUPAL_TEST/test3/usage$ ./composer.phar show -a uepal/fr.uepalparoisse.civiparoisse
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Xdebug: [Step Debug] Could not connect to debugging client. Tried:
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port) :-(
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Warning from https://repo.packagist.org: Support for Composer 1 is deprecated and some packages will not be available. You should upgrade to Composer 2. See https://blog.packagist.com/deprecating-composer-1-support/
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>name     : uepal/fr.uepalparoisse.civiparoisse
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>descrip. :
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>keywords :
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>versions : v2.0
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>type     : library
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>homepage :
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>source   : [git] /home/ubuntu/DRUPAL_TEST/test3/release
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>a85389ed3454e345d2bc67d4b0873f5d06e5dab8
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>dist     : []
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>names    : uepal/fr.uepalparoisse.civiparoisse
+</code></pre></div>
+On peut également installer le package pour tester.</p>
+<p>Si l’on veut mettre le code à la disposition de tous, on peut très bien faire du dépôt de release un dépôt « public ».</p>
+<h3 id="mise-a-disposition-via-site-web">Mise à disposition via site web</h3>
+<p>La génération des packages à mettre sur un site web présuppose de l’utilisation d’un système de versionning (en l’occurence, un dépôt git) qui va être interrogé pour générer les packages de code qui vont être mis à disposition. Le plus propre est de connecter l’outil sur le dépôt de release généré dans le point au-dessus, car il apparaît que les sources sont référencées dans les fichiers json générés.</p>
+<p>Si les sources sont publiques, et donc mises à la disposition de tous, alors on peut éventuellement penser à publier directement chez packagist.org, qui va s’occuper lui-même de parcourir périodiquement le dépôt git de release et générer les packages (voir : <a href="https://packagist.org/about">https://packagist.org/about</a> ). En revanche, il faut éventuellement mettre en place une configuration de hook sur le dépôt git pourque github avertisse packagist quand une modification est effectuée, de sorte à ne pas avoir besoin d’attendre le délai de la semaine.</p>
+<p>Si on veut utiliser un dépôt privé, il faudra alors plutôt se tourner vers packagist.com (<a href="https://packagist.com/">https://packagist.com/</a> ), mais il y aura alors des coûts associés. Un autre type de solution est la génération du site web via Satis (<a href="https://github.com/composer/satis">https://github.com/composer/satis</a> ). Satis est configuré via un
+ficher de configuration, qui est par défaut <code>satis.json</code>. Un exemple de configuration est le suivant :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;uepal/satis&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">&quot;homepage&quot;</span><span class="p">:</span><span class="s2">&quot;http://satis.test&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">&quot;repositories&quot;</span><span class="p">:[</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;vcs&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;/home/ubuntu/DRUPAL_TEST/test3/release&quot;</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nt">&quot;require-all&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nt">&quot;archive&quot;</span><span class="p">:{</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="s2">&quot;tar&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nt">&quot;checksum&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nt">&quot;skip-dev&quot;</span><span class="p">:</span><span class="kc">true</span><span class="w"></span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="nt">&quot;output-dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TEST_RELEASE&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="nt">&quot;output-html&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="nt">&quot;providers&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="nt">&quot;pretty-print&quot;</span><span class="p">:</span><span class="kc">true</span><span class="w"></span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Les paramètres variants sont la homepage, qui sera l’URL de publication finale du contenu, les repositories qui seront analysés pour générer les packages, et l’output-dir, qui est le répertoire de destination. Un simple appel de satis avec le paramètre build permettra ensuite de générer le site. La documentation de satis est assez complète (dont <a href="https://github.com/composer/satis/blob/main/docs/using.md">https://github.com/composer/satis/blob/main/docs/using.md</a> et <a href="https://github.com/composer/satis/blob/main/docs/config.md">https://github.com/composer/satis/blob/main/docs/config.md</a> ), et complète également celle de
+Composer pour les dépôts privés (<a href="https://getcomposer.org/doc/articles/handling-private-packages.md">https://getcomposer.org/doc/articles/handling-private-packages.md</a> ). Comme il s’agira d’un site web « indépendant » dans une certaine mesure, on pourra mettre en œuvre des éléments comme l’authentification des clients.</p>
+<p>La génération peut par exemple donner des fichiers comme :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ubuntu@wpcore:~/DRUPAL_COMPOSER2/TOOLS/satis/TEST$ ls -lR
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>.:
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>total <span class="m">156</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>drwxrwxr-x <span class="m">3</span> ubuntu ubuntu <span class="m">4096</span> nov. <span class="m">13</span> <span class="m">16</span>:14 dist
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">140235</span> nov. <span class="m">13</span> <span class="m">16</span>:14 index.html
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>drwxrwxr-x <span class="m">3</span> ubuntu ubuntu <span class="m">4096</span> nov. <span class="m">13</span> <span class="m">16</span>:14 p
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>drwxrwxr-x <span class="m">3</span> ubuntu ubuntu <span class="m">4096</span> nov. <span class="m">13</span> <span class="m">16</span>:14 p2
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">369</span> nov. <span class="m">13</span> <span class="m">16</span>:14 packages.json
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>./dist:
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>total <span class="m">4</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>drwxrwxr-x <span class="m">3</span> ubuntu ubuntu <span class="m">4096</span> nov.13 <span class="m">16</span>:14 uepal
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>./dist/uepal:
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>total <span class="m">4</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>drwxrwxr-x <span class="m">2</span> ubuntu ubuntu <span class="m">4096</span> nov.13 <span class="m">16</span>:14 fr-uepalparoisse-civiparoisse./dist/uepal/fr-uepalparoisse-civiparoisse:
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>total <span class="m">1128</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">382464</span> nov. <span class="m">13</span> <span class="m">16</span>:14 uepal-fr-uepalparoisse-civiparoisse-v0.0.1-66a904.tar
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">382464</span> nov. <span class="m">13</span> <span class="m">16</span>:14 uepal-fr-uepalparoisse-civiparoisse-v0.0.2-ff0663.tar
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">382464</span> nov. <span class="m">13</span> <span class="m">16</span>:14 uepal-fr-uepalparoisse-civiparoisse-v0.0.3-283727.tar
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>./p:
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>total <span class="m">4</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>drwxrwxr-x <span class="m">2</span> ubuntu ubuntu <span class="m">4096</span> nov.13 <span class="m">16</span>:14 uepal
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>./p/uepal:
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>total <span class="m">4</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">3889</span> nov. <span class="m">13</span> <span class="m">16</span>:14 <span class="s1">&#39;fr.uepalparoisse.civiparoisse$1060f03e1bdec900db4bd55eb8eb8bb1ad05795428765663e44247de1f6d7ecd.json&#39;</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>./p2:
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>total <span class="m">4</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>drwxrwxr-x <span class="m">2</span> ubuntu ubuntu <span class="m">4096</span> nov. <span class="m">13</span> <span class="m">16</span>:14 uepal
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>./p2/uepal:
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>total <span class="m">8</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">744</span> nov. <span class="m">13</span> <span class="m">16</span>:14 fr.uepalparoisse.civiparoisse~dev.json
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>-rw-rw-r-- <span class="m">1</span> ubuntu ubuntu <span class="m">3167</span> nov. <span class="m">13</span> <span class="m">16</span>:14 fr.uepalparoisse.civiparoisse.json
+</code></pre></div>
+<p>La consommation du package se fait ensuite en spécifiant dans le composer.json du projet d’installation à la fois le dépôt privé et le package requis, comme par exemple pour l’expérimentation :</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">&quot;repositories&quot;</span><span class="p">:[{</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;composer&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://satis.test&quot;</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}],</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">&quot;extra&quot;</span><span class="p">:{</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nt">&quot;enable-patching&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nt">&quot;compile-whitelist&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;civicrm/civicrm-core&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;civicrm/composer-compile-lib&quot;</span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="nt">&quot;require&quot;</span><span class="p">:{</span><span class="w"></span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="nt">&quot;drupal/recommended-project&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=9.2&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="nt">&quot;drush/drush&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=10&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nt">&quot;drupal/console&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="nt">&quot;civicrm/civicrm-core&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=5.38&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="nt">&quot;civicrm/civicrm-packages&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=5.38&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="nt">&quot;civicrm/civicrm-drupal-8&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=5.38&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="nt">&quot;civicrm/civicrm-asset-plugin&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=1.1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="nt">&quot;civicrm/composer-downloads-plugin&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;=3&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="nt">&quot;uepal/fr.uepalparoisse.civiparoisse&quot;</span><span class="p">:</span><span class="s2">&quot;0.0.3&quot;</span><span class="w"></span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="nt">&quot;minimum-stability&quot;</span><span class="p">:</span><span class="s2">&quot;dev&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="nt">&quot;prefer-stable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="nt">&quot;config&quot;</span><span class="p">:{</span><span class="w"></span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="nt">&quot;secure-http&quot;</span><span class="p">:</span><span class="kc">false</span><span class="w"></span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+Le secure-http à FALSE a été utilisé pour ne pas avoir besoin de faire une configuration fastidieuse du SSL dans l’expérimentation, étant donné que dans le cadre d’une mise en production on utiliserait probablement des certificats reconnus sans avoir besoin de réglages spécifiques.</p>
+<p>Après utilisation du composer update, on retrouve ensuite dans le répertoire <code>vendor/uepal/fr.uepalparoisse.civiparoisse</code> l’ensemble de l’extension.</p>
+<p>On comprend donc que chaque méthode a des avantages et des inconvénients, mais on peut globalement supposer que l’utilisation du dépôt git uniquement convient pour un petit nombre d’instances, tandis que l’utilisation d’un site web fournira des facilités d’installation pour des instances plus nombreuses, dans la mesure où le site web pourra disposer de fonctionnalités supplémentaires (par exemple un proxy cache qui pourra être utile pour économiser du trafic réseau pour la récupération des packages Composer, sans compter une séparation plus nette entre les outils de développements et les outils de production).</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Index
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="environnement_dev.html" class="md-footer__link md-footer__link--next" aria-label="Next: Environnement de dev" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Environnement de dev
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

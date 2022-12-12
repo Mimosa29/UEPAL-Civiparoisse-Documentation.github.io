@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.uepal.fr/TECHNIQUE/INTEGRATION/KUBERNETES/HELM/reservations.html">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Réservations - Documentation UEPAL Civiparoisse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reservations-de-ressources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../index.html" title="Documentation UEPAL Civiparoisse" class="md-header__button md-logo" aria-label="Documentation UEPAL Civiparoisse" data-md-component="logo">
+      
+  <img src="../../../../assets/uepal-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation UEPAL Civiparoisse
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Réservations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../index.html" title="Documentation UEPAL Civiparoisse" class="md-nav__button md-logo" aria-label="Documentation UEPAL Civiparoisse" data-md-component="logo">
+      
+  <img src="../../../../assets/uepal-logo.svg" alt="logo">
+
+    </a>
+    Documentation UEPAL Civiparoisse
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Présentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Présentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Présentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PRESENTATION/index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PRESENTATION/presentation_fonctionnelle.html" class="md-nav__link">
+        Périmètre fonctionnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PRESENTATION/presentation_ecosysteme.html" class="md-nav__link">
+        Ecosystème projet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../PRESENTATION/presentation_livrables.html" class="md-nav__link">
+        Livrables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Technique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Technique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roles.html" class="md-nav__link">
+        Rôles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Mail
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mail" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mail
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MAIL/mail.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MAIL/ecosysteme.html" class="md-nav__link">
+        Ecosystème
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MAIL/sendmail.html" class="md-nav__link">
+        Envoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MAIL/fetchmail.html" class="md-nav__link">
+        Réception
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Logiciel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Logiciel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Logiciel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LOGICIEL/index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LOGICIEL/distribution_code_composer.html" class="md-nav__link">
+        Distribution de code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LOGICIEL/environnement_dev.html" class="md-nav__link">
+        Environnement de dev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LOGICIEL/environnement_dev_env.html" class="md-nav__link">
+        Personnalisation environnement de dev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LOGICIEL/importation.html" class="md-nav__link">
+        Importation de données
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Intégration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Intégration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Intégration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../etude_authentification.html" class="md-nav__link">
+        Authentification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3" type="checkbox" id="__nav_3_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker.html" class="md-nav__link">
+        Description générale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3_2" type="checkbox" id="__nav_3_4_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3_2">
+          Images
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Images" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Images
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/composer_base.html" class="md-nav__link">
+        Composer_base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/composer_files.html" class="md-nav__link">
+        Composer_files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/tools.html" class="md-nav__link">
+        tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/init.html" class="md-nav__link">
+        init
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/cron.html" class="md-nav__link">
+        cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/selfkeys.html" class="md-nav__link">
+        selfkeys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/httpd.html" class="md-nav__link">
+        httpd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/authenticator.html" class="md-nav__link">
+        authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/proxy.html" class="md-nav__link">
+        proxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/db_tls_server.html" class="md-nav__link">
+        db_tls_server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/db_tls_client.html" class="md-nav__link">
+        db_tls_client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DOCKER/update.html" class="md-nav__link">
+        update
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db_ssl.html" class="md-nav__link">
+        DB_SSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5" type="checkbox" id="__nav_3_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_5">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maquettage.html" class="md-nav__link">
+        Maquettage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ressources.html" class="md-nav__link">
+        Ressources utiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5_3" type="checkbox" id="__nav_3_4_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_5_3">
+          Chart Helm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chart Helm" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chart Helm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="description_generale.html" class="md-nav__link">
+        Description générale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="db_dbproxy.html" class="md-nav__link">
+        DB et DB proxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="httpd.html" class="md-nav__link">
+        Serveur web interne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proxy_auth.html" class="md-nav__link">
+        Proxy et authenticateur
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cron.html" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="volumes.html" class="md-nav__link">
+        Volumes (persistants)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Réservations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reservations.html" class="md-nav__link md-nav__link--active">
+        Réservations
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#considerations-generales" class="md-nav__link">
+    Considérations Générales
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimations-des-ressources-dune-instance" class="md-nav__link">
+    Estimations des ressources d'une instance
+  </a>
+  
+    <nav class="md-nav" aria-label="Estimations des ressources d'une instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hypotheses-de-travail" class="md-nav__link">
+    Hypothèses de travail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#considerations-generales" class="md-nav__link">
+    Considérations Générales
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimations-des-ressources-dune-instance" class="md-nav__link">
+    Estimations des ressources d'une instance
+  </a>
+  
+    <nav class="md-nav" aria-label="Estimations des ressources d'une instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hypotheses-de-travail" class="md-nav__link">
+    Hypothèses de travail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reservations-de-ressources">Réservations de ressources</h1>
+<h2 id="considerations-generales">Considérations Générales</h2>
+<p>La réservation des ressources est un domaine important dans Kubernetes, car les réservations permettent de mieux planifier l'exécution des pods. Les ressources attribuées seraient garanties quand la demande et la limite sont équivalentes. D'où la mise en oeuvre de limitations et de requêtes de mêmes valeurs, et ce au niveau CPU et mémoire.</p>
+<p>Le profilage des ressources consommées joue sur plusieurs éléments :</p>
+<ul>
+<li>la RAM et l'espace disque sont des ressources critiques : en particulier, si l'on n'a plus de RAM, le container peut crasher ; en revanche, au niveau CPU, on jouera plutôt sur les performances (à moins d'avoir des prolématiques de temporisation)</li>
+<li>la BD est prévue initialement pour tenir dans 512Mo ; en désactivant performance_schema, on devrait pouvoir tenir dans 350Mo</li>
+<li>on peut limiter au niveau d'Apache le nombre de requêtes servies simultanément ; ces requêtes, lorsqu'elles arrivent sur du code PHP, font entrer en jeu la limite mémoire de PHP. On arrive alors à borner la plus grosse dépense mémoire</li>
+<li>le cron travaille avec un seul environnement PHP à la fois : il devrait donc être possible de borner sa consommation de RAM</li>
+<li>il y a le problème de l'authentification de toutes les requêtes : si on passe à la double authentification, on peut envisager d'utiliser le cache d'authentification malgré sa structure qui n'est plus satisfaisante, ce qui permettrait une meilleure utilisation des ressources</li>
+<li>on ne peut pas encore déterminer avec précision les espaces disques qui seront à allouer, que ce soit pour les volumes persistants ou pour les volumes éphémères (dont logs)</li>
+<li>il a été prévu de pouvoir changer les valeurs des ressources dans chaque déploiement de release : en effet, la charge dépend aussi de l'utilisation (intensive ou non) qui sera faite de l'outil. Il peut être compréhensible de chercher à contenter les plus gros consommateurs tant que ce n'est pas au détriment des autres consommateurs</li>
+<li>il ne faut pas oublier que le nombre cible de déploiements est très conséquent : de ce fait, des petites économies de ressources peuvent avoir toutefois un effet notable</li>
+<li>on ne peut pas additionner aveuglément les ressources de tous les containers : il faut également considérer l'ordre de démarrage des pods, et le fait que les containers d'init d'un pod n'existent pas en même temps que les containers qui constituent la véritable charge de travail</li>
+<li>il ne faut pas oublier que toutes les ressources du cloud ont un coût associé, d'où l'apparition d'une nouvelle démarche : le FinOps, qui cherche à optimiser l'utilisation des ressources et le coût.</li>
+</ul>
+<h2 id="estimations-des-ressources-dune-instance">Estimations des ressources d'une instance</h2>
+<h3 id="hypotheses-de-travail">Hypothèses de travail</h3>
+<p>Il est nécessaire de poser un certain nombre d'hypothèses de travail :</p>
+<ul>
+<li>
+<p><strong>on va supposer que l'on va utiliser le cache d'authentification</strong> ; en effet, le coût d'une authentification multifacteur via du SSL est un coût quasiment considérable comme fixe (prix des clefs de sécurité, et éventuellement, prix des certificats (annuels ou multiannuels)s'ils ne sont pas autogénérés), alors que la puissance consommée dépend du nombre de requêtes, et influe donc sur le coût de revient mensuel de l'instance : on va limiter le nombre de requêtes traitables simultanément.</p>
+</li>
+<li>
+<p>on va se baser sur des ressources garanties (request=limit sur les réservations), pour ne pas avoir en théorie de problèmes d'éviction</p>
+</li>
+<li>
+<p>il faudra rajouter le coût d'un probable firewall qui viendra en coupure des flux</p>
+</li>
+<li>
+<p>on va passer sur un modèle de threading Apache en mpm_prefork, qui est de toute façon utilisé pour le PHP si on n'utilise pas php-fpm, et on va utiliser par simplicité ce modèle de threading à la fois sur le serveur web interne et le reverse proxy</p>
+</li>
+<li>
+<p>le minimum de mémoire (memory_limit requis par Drupal est 64M); toutefois selon <a href="https://docs.civicrm.org/installation/en/latest/general/requirements/">https://docs.civicrm.org/installation/en/latest/general/requirements/</a> il faudrait passer au moins à 256M</p>
+</li>
+<li>
+<p>les logs passeront par un DaemonSet EFK ou équivalent : du coup, le conteneur de gestion des logs n'est pas comptabilisé dans l'infrastructure d'une instance</p>
+</li>
+<li>
+<p><strong>on suppose qu'on n'intègre pas de serveur de médias, qu'on n'intègre pas le traitement des mails entrants (donc traitement manuel), et qu'on spécialise le traitement des mails sortants</strong></p>
+</li>
+<li>
+<p>configuration mpm_prefork :</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MAX_CONNECTIONS_PER_CHILD=1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>MAX_REQUEST_WORKERS=4
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>SERVER_LIMIT=4
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>START_SERVERS=4
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>MIN_SPARE_SERVERS=0
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>MAX_SPARE_SERVERS=4
+</code></pre></div>
+Du coup, on sert 4 connexions simultanées, ce qui pourrait être suffisant pour un seul utilisateur.</p>
+<table>
+<thead>
+<tr>
+<th>Conteneur</th>
+<th>Description</th>
+<th>Limite mémoire</th>
+<th>Limite CPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proxy</td>
+<td>reverse proxy d'authentification</td>
+<td>256Mi</td>
+<td>250m</td>
+</tr>
+<tr>
+<td>proxy_init</td>
+<td>init du reverse proxy</td>
+<td>50Mi</td>
+<td>100m</td>
+</tr>
+<tr>
+<td>auth (proxy_authenticator)</td>
+<td>authentificateur</td>
+<td>256Mi</td>
+<td>250m</td>
+</tr>
+<tr>
+<td>cron</td>
+<td>exécution cron</td>
+<td>384Mi</td>
+<td>250m</td>
+</tr>
+<tr>
+<td>cron_dbproxy</td>
+<td>accès tunnel BD SSL pour cron</td>
+<td>50Mi</td>
+<td>100m</td>
+</tr>
+<tr>
+<td>cron_init</td>
+<td>initialisation du pod cron</td>
+<td>50Mi</td>
+<td>100m</td>
+</tr>
+<tr>
+<td>httpd</td>
+<td>serveur web interne</td>
+<td>1536Mi</td>
+<td>1000m</td>
+</tr>
+<tr>
+<td>httpd_dbproxy</td>
+<td>accès tunnel BD SSL pour serveur web</td>
+<td>100Mi</td>
+<td>100m</td>
+</tr>
+<tr>
+<td>httpd_init</td>
+<td>initialisation du pod server web interne</td>
+<td>50Mi</td>
+<td>100m</td>
+</tr>
+<tr>
+<td>db</td>
+<td>conteneur BD</td>
+<td>512Mi</td>
+<td>250m</td>
+</tr>
+<tr>
+<td>db_init</td>
+<td>initialisation environnement BD</td>
+<td>1024Mi</td>
+<td>1000m</td>
+</tr>
+<tr>
+<td>dbproxy</td>
+<td>accès tunnel BD SSL pour le serveur BD</td>
+<td>100Mi</td>
+<td>100m</td>
+</tr>
+</tbody>
+</table>
+<p>Ordre de démarrage (sans spécialisation du mail sortant):</p>
+<p>Les containeurs d'initialisation implémentent les contraintes suivantes :</p>
+<ul>
+<li><code>db_init</code> permet de lancer <code>db</code> et <code>dbproxy</code> </li>
+<li><code>httpd_init</code> dépend de <code>dbproxy</code> pour lancer <code>httpd_dbproxy</code> et <code>httpd</code></li>
+<li><code>cron_init</code> dépend de dbproxy pour lancer <code>cron</code> et <code>cron_dbproxy</code></li>
+<li><code>proxy_init</code> dépend du lancement de <code>httpd</code> pour lancer <code>proxy</code> et <code>auth</code></li>
+</ul>
+<p>On en obtient un équivalent de graphe de dépendances :</p>
+<ul>
+<li><code>db_init</code><ul>
+<li><code>db</code></li>
+<li><code>dbproxy</code><ul>
+<li><code>httpd_init</code><ul>
+<li><code>httpd_dbproxy</code></li>
+<li><code>httpd</code><ul>
+<li><code>proxy_init</code><ul>
+<li><code>proxy</code></li>
+<li><code>auth</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>cron_init</code><ul>
+<li><code>cron</code></li>
+<li><code>cron_dbproxy</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>On peut déduire deux phases de lancement d'une instance :</p>
+<ul>
+<li>installation initiale : seul <code>db_init</code> est lancé : 1024Mi, 1000m</li>
+<li>ensuite, le pire cas est quand tous les services tournent, car <code>httpd_init</code>, <code>proxy_init</code> et <code>cron_init</code> consomment moins que les services proprement dits. Toutefois, l'unité étant le pod d'exécution (à cause du scheduling sur les noeuds), il faut faire des sommes séparées pour chaque pod :<ul>
+<li>pod db : 1124Mi et 1100m</li>
+<li>pod cron : 434Mi et 350m</li>
+<li>pod httpd : 1636Mi et 1100m</li>
+<li>pod proxy : 512Mi et 500m</li>
+</ul>
+</li>
+</ul>
+<p>Ce à quoi on ajoute la spécialisation du mail sortant :</p>
+<ul>
+<li>Client d'accès à 50Mi et 100m pour le pod httpd et le pod proxy</li>
+<li>Pod spécifique d'envoi des mails : 256Mi et 200m</li>
+</ul>
+<p>On en arrive donc, avec la spécialisation du mail sortant :</p>
+<ul>
+<li>pod db : <strong>1124Mi et 1100m</strong></li>
+<li>pod cron : <strong>484Mi et 450m</strong></li>
+<li>pod httpd : <strong>1686Mi et 1200m</strong></li>
+<li>pod proxy : <strong>512Mi et 500m</strong></li>
+<li>pod mail_sortant : <strong>256Mi et 200m</strong></li>
+</ul>
+<p>Donc une consommation totale max de : <strong>4062Mi et 3450m</strong></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="secrets.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Secrets" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Secrets
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

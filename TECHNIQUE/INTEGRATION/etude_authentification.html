@@ -1,0 +1,1981 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.uepal.fr/TECHNIQUE/INTEGRATION/etude_authentification.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Authentification - Documentation UEPAL Civiparoisse</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#etude-authentification-apache-civicrm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Documentation UEPAL Civiparoisse" class="md-header__button md-logo" aria-label="Documentation UEPAL Civiparoisse" data-md-component="logo">
+      
+  <img src="../../assets/uepal-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation UEPAL Civiparoisse
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Authentification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Documentation UEPAL Civiparoisse" class="md-nav__button md-logo" aria-label="Documentation UEPAL Civiparoisse" data-md-component="logo">
+      
+  <img src="../../assets/uepal-logo.svg" alt="logo">
+
+    </a>
+    Documentation UEPAL Civiparoisse
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Présentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Présentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Présentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/presentation_fonctionnelle.html" class="md-nav__link">
+        Périmètre fonctionnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/presentation_ecosysteme.html" class="md-nav__link">
+        Ecosystème projet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PRESENTATION/presentation_livrables.html" class="md-nav__link">
+        Livrables
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Technique
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Technique" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Technique
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles.html" class="md-nav__link">
+        Rôles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Mail
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mail" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mail
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/mail.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/ecosysteme.html" class="md-nav__link">
+        Ecosystème
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/sendmail.html" class="md-nav__link">
+        Envoi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MAIL/fetchmail.html" class="md-nav__link">
+        Réception
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Logiciel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Logiciel" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Logiciel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LOGICIEL/index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LOGICIEL/distribution_code_composer.html" class="md-nav__link">
+        Distribution de code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LOGICIEL/environnement_dev.html" class="md-nav__link">
+        Environnement de dev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LOGICIEL/environnement_dev_env.html" class="md-nav__link">
+        Personnalisation environnement de dev
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LOGICIEL/importation.html" class="md-nav__link">
+        Importation de données
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Intégration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Intégration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Intégration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Authentification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="etude_authentification.html" class="md-nav__link md-nav__link--active">
+        Authentification
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentification-par-mot-de-passe" class="md-nav__link">
+    Authentification par mot de passe
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentification par mot de passe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-choix-du-cms-drupal" class="md-nav__link">
+    Le choix du CMS : Drupal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-choix-du-serveur-web-apache" class="md-nav__link">
+    Le choix du serveur web : Apache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategie-dinterfacage" class="md-nav__link">
+    Stratégie d’interfaçage
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie d’interfaçage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consommation-des-identifiants-presentes-par-apache-a-drupal" class="md-nav__link">
+    Consommation des identifiants présentés par Apache à Drupal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-a-disposition-des-donnees-dauthentification" class="md-nav__link">
+    Mise à disposition des données d’authentification
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise à disposition des données d’authentification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fournisseur-authnz-external" class="md-nav__link">
+    Fournisseur Authnz External
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-shell-principal-wget-script-askpass" class="md-nav__link">
+    Script shell principal, wget, script askpass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cible-pour-lauthentification-authx" class="md-nav__link">
+    Cible pour l’authentification : authx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-apache-mise-en-uvre-dun-reverse-proxy-et-authentification-a-deux-facteurs-ssl-et-basic" class="md-nav__link">
+    Configuration Apache : mise en œuvre d’un reverse proxy et authentification à deux facteurs (SSL et basic)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentification-par-clef-privee-et-certificat-ssl-sur-hsm" class="md-nav__link">
+    Authentification par clef privée (et certificat SSL) sur HSM
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentification par clef privée (et certificat SSL) sur HSM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-contrainte-lourde-la-gestion-dune-autorite-de-certification" class="md-nav__link">
+    Une contrainte lourde : la gestion d’une autorité de certification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparation-dun-hsm-deux-exemples" class="md-nav__link">
+    Préparation d’un HSM : deux exemples
+  </a>
+  
+    <nav class="md-nav" aria-label="Préparation d’un HSM : deux exemples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clef-yubikey" class="md-nav__link">
+    Clef Yubikey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softhsm2" class="md-nav__link">
+    SoftHSM2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en-uvre-du-hsm-pour-les-connexions-web" class="md-nav__link">
+    Mise en œuvre du HSM pour les connexions web
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise en œuvre du HSM pour les connexions web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prise-en-charge-par-apache" class="md-nav__link">
+    Prise en charge par Apache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prise-en-charge-hsm-au-niveau-du-navigateur" class="md-nav__link">
+    Prise en charge HSM au niveau du navigateur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addendum-mise-en-cache-de-lauthentification" class="md-nav__link">
+    Addendum : mise en cache de l'authentification
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3" type="checkbox" id="__nav_3_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docker.html" class="md-nav__link">
+        Description générale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_3_2" type="checkbox" id="__nav_3_4_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_3_2">
+          Images
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Images" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Images
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/composer_base.html" class="md-nav__link">
+        Composer_base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/composer_files.html" class="md-nav__link">
+        Composer_files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/tools.html" class="md-nav__link">
+        tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/init.html" class="md-nav__link">
+        init
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/cron.html" class="md-nav__link">
+        cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/selfkeys.html" class="md-nav__link">
+        selfkeys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/httpd.html" class="md-nav__link">
+        httpd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/authenticator.html" class="md-nav__link">
+        authenticator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/proxy.html" class="md-nav__link">
+        proxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/db_tls_server.html" class="md-nav__link">
+        db_tls_server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/db_tls_client.html" class="md-nav__link">
+        db_tls_client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DOCKER/update.html" class="md-nav__link">
+        update
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="db_ssl.html" class="md-nav__link">
+        DB_SSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5" type="checkbox" id="__nav_3_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_5">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/maquettage.html" class="md-nav__link">
+        Maquettage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/ressources.html" class="md-nav__link">
+        Ressources utiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_5_3" type="checkbox" id="__nav_3_4_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_5_3">
+          Chart Helm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Chart Helm" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Chart Helm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/description_generale.html" class="md-nav__link">
+        Description générale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/db_dbproxy.html" class="md-nav__link">
+        DB et DB proxy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/httpd.html" class="md-nav__link">
+        Serveur web interne
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/proxy_auth.html" class="md-nav__link">
+        Proxy et authenticateur
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/cron.html" class="md-nav__link">
+        Cron
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/volumes.html" class="md-nav__link">
+        Volumes (persistants)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="KUBERNETES/HELM/reservations.html" class="md-nav__link">
+        Réservations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentification-par-mot-de-passe" class="md-nav__link">
+    Authentification par mot de passe
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentification par mot de passe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-choix-du-cms-drupal" class="md-nav__link">
+    Le choix du CMS : Drupal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-choix-du-serveur-web-apache" class="md-nav__link">
+    Le choix du serveur web : Apache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategie-dinterfacage" class="md-nav__link">
+    Stratégie d’interfaçage
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie d’interfaçage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consommation-des-identifiants-presentes-par-apache-a-drupal" class="md-nav__link">
+    Consommation des identifiants présentés par Apache à Drupal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-a-disposition-des-donnees-dauthentification" class="md-nav__link">
+    Mise à disposition des données d’authentification
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise à disposition des données d’authentification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fournisseur-authnz-external" class="md-nav__link">
+    Fournisseur Authnz External
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script-shell-principal-wget-script-askpass" class="md-nav__link">
+    Script shell principal, wget, script askpass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cible-pour-lauthentification-authx" class="md-nav__link">
+    Cible pour l’authentification : authx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-apache-mise-en-uvre-dun-reverse-proxy-et-authentification-a-deux-facteurs-ssl-et-basic" class="md-nav__link">
+    Configuration Apache : mise en œuvre d’un reverse proxy et authentification à deux facteurs (SSL et basic)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentification-par-clef-privee-et-certificat-ssl-sur-hsm" class="md-nav__link">
+    Authentification par clef privée (et certificat SSL) sur HSM
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentification par clef privée (et certificat SSL) sur HSM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-contrainte-lourde-la-gestion-dune-autorite-de-certification" class="md-nav__link">
+    Une contrainte lourde : la gestion d’une autorité de certification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparation-dun-hsm-deux-exemples" class="md-nav__link">
+    Préparation d’un HSM : deux exemples
+  </a>
+  
+    <nav class="md-nav" aria-label="Préparation d’un HSM : deux exemples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clef-yubikey" class="md-nav__link">
+    Clef Yubikey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softhsm2" class="md-nav__link">
+    SoftHSM2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en-uvre-du-hsm-pour-les-connexions-web" class="md-nav__link">
+    Mise en œuvre du HSM pour les connexions web
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise en œuvre du HSM pour les connexions web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prise-en-charge-par-apache" class="md-nav__link">
+    Prise en charge par Apache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prise-en-charge-hsm-au-niveau-du-navigateur" class="md-nav__link">
+    Prise en charge HSM au niveau du navigateur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addendum-mise-en-cache-de-lauthentification" class="md-nav__link">
+    Addendum : mise en cache de l'authentification
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="etude-authentification-apache-civicrm">Etude : Authentification Apache / CiviCRM</h1>
+<p>L’authentification de CiviCRM peut correspondre à deux notions, qui ne se recoupent pas
+forcément :</p>
+<ul>
+<li>l’utilisateur qui est logué dans le CMS : on se base alors sur les mécanismes du CMS, qui
+peuvent être différents en fonction des CMS</li>
+<li>le contact enregistré dans le CRM : ce protocole permet également de reconnaître comme utilisateur CiviCRM un contact. Par ailleurs, Authx dispose également d’une page qui expose l’identification de l’utilisateur courant (/civicrm/authx/id), page qui a également l’avantage d’être légère à charger.</li>
+</ul>
+<p>Dans le cadre du projet CiviParoisse, il n’est pas souhaitable, pour des questions de sécurité et de confidentialité des données, qu’un contact sans compte dans le CMS puisse interagir avec le CRM. Il s’agira donc de faire en sorte que seuls les utilisateurs logués dans le CMS puissent avoir un accès au système.</p>
+<p>L’accès au CMS devra d’ailleurs être compris de manière assez large : en effet, si on considère des documents qui sont stockés sous formes de fichiers directement accessibles via Apache, le CMS ne sera pas chargé pour l’accès à ces fichiers et donc le contrôle d’accès que pourrait effectuer le CMS ne se fera pas. Or, les contrôles sont également requis sur ces fichiers. Il s’agit donc d’effectuer une authentification directement au niveau du serveur web.</p>
+<p>Pour autant, le processus doit rester simple pour les utilisateurs finaux : il s’agit donc de ne pas leur demander de retenir trop de mots de passe : il faut donc que l’authentification effectuée au niveau de Apache puisse être propagée au CMS. Toutefois, étant donné que les utilisateurs pourraient choisir des mots de passe simple (ou les écrire sur des morceaux de papier), il convient de proposer une authentification à 2 facteurs, par exemple en se basant non seulement sur une connaissance (le mot de passe), mais également une possession (un certificat SSL, voire un token de sécurité).</p>
+<p>Le travail à effectuer est donc assez complexe, et a nécessité des recherches poussées. Ce travail peut se diviser en deux parties, l’une concernant l’authentification par mot de passe, et l’autre concernant l’authentification par certificat SSL et HSM ; en revanche, il faudra également veiller à la correspondance des identités entre les deux méthodes (ne pas autoriser le certificat d’un utilisateur A et le mot de passe d’un utilisateur B lors d’un seul login).</p>
+<h2 id="authentification-par-mot-de-passe">Authentification par mot de passe</h2>
+<h3 id="le-choix-du-cms-drupal">Le choix du CMS : Drupal</h3>
+<p>L’authentification par mot de passe est gérée par le CMS. CiviCRM propose un support de 4 CMS (Drupal, Backdrop, Wordpress et Joomla). Ces CMS proposent tous nativement une authentification par nom d’utilisateur et mot de passe, avec un hash salé du mot de passe stocké en base de données. De la sorte, si la base de données fuite, les mots de passe ne sont pas pour autant présents, car les fonctions de hash cherchent à être des fonctions à sens unique qui ne permettent pas de prédire des collisions de hashes (lorsque cela arrive, la fonction ne peut plus être utilisée comme fonction de sécurité). Les fonctions de hashes utilisées peuvent différer, mais il semble que la plupart des CMS supportent les hashes calculés par le code du projet phpass (<a href="https://www.openwall.com/phpass/">https://www.openwall.com/phpass/</a>). On notera toutefois que la page du projet indique qu’il faudrait préférer l’utilisation des fonctions natives de PHP 5.5 et ultérieur.</p>
+<p>Même si l’on observe une certaine unicité de manière de faire chez les CMS supportés, la nécessité de définir le CMS qui sera utilisé arrive quand même rapidement, puisqu’il s’agira d’implémenter un SSO entre le serveur web et le CMS. Les recherches effectuées ont conduit à privilégier Drupal, pour plusieurs raisons :</p>
+<ul>
+<li>
+<p>les recherches sur les procédures d’installation ont montré l’intérêt, pour l’automatisation de l’installation et la mise à jour des systèmes, de disposer d’un gestionnaire de versions. Or, CiviCRM utilise Composer, qui est également utilisé par Drupal. A l’inverse, Backdrop et Wordpress ne semblent pas intégrer officiellement la gestion des dépendances via
+Composer. Au niveau de Joomla, le support de Composer est souhaité et intégré dans la feuille de route, mais n’est pas encore atteint.</p>
+</li>
+<li>
+<p>Drupal utilise le framework Symfony, et ce framework dispose d’un support
+d’authentification HTTP Basic : le système intègre donc déjà des composants qui faciliteront le SSO entre le serveur web et le CMS</p>
+</li>
+<li>
+<p>le projet CiviParoisse est historiquement basé sur le CMS Drupal ; les bénévoles qui travaillent sur les aspects techniques ont de ce fait cherché à remonter en local des instances Drupal + CiviCRM, d’où une éventuelle réutilisation ou montée en compétences sur ce CMS</p>
+</li>
+<li>
+<p>il semblerait que CiviCRM ait des affinités avec Drupal (comme par exemple les conventions de code qui ont été réutilisées).</p>
+</li>
+</ul>
+<h3 id="le-choix-du-serveur-web-apache">Le choix du serveur web : Apache</h3>
+<p>Le choix du serveur web est également un choix important, car il en existe un grand nombre (Apache, Nginx, Jetty, Lighttpd pour ne citer qu’eux). Apache est le serveur web qui est traditionnellement employé « par défaut » dans les sites web PHP (stack LAMP ou WAMP, avec A pour Apache), et de ce fait est susceptible d’être mieux connu par les bénévoles que les autres
+solutions. De ce fait, même si d’autres serveurs pourraient éventuellement être employés, la recherche s’est concentrée sur l’interfaçage avec Apache. Toutefois, si le besoin se fait sentir, on pourra chercher à se tourner vers d’autres solutions (dont Nginx).</p>
+<h3 id="strategie-dinterfacage">Stratégie d’interfaçage</h3>
+<p>La stratégie d’interfaçage va chercher à utiliser au maximum les codes existants pour développer (et maintenir) un minimum de mécanismes spécifiques. De ce fait, deux axes vont être mis en œuvre :</p>
+<ul>
+<li>
+<p>la consommation des identifiants présentés par Apache à Drupal pour disposer d’un mécanisme SSO.</p>
+</li>
+<li>
+<p>la mise à disposition à Apache d’un mécanisme de validation des données d’authentification, mécanisme fourni par Drupal ou CiviCRM (authx)</p>
+</li>
+</ul>
+<h4 id="consommation-des-identifiants-presentes-par-apache-a-drupal">Consommation des identifiants présentés par Apache à Drupal</h4>
+<p>La consommation des données d’authentification présentées par Apache à du code PHP est assez standardisée : traditionnellement, le serveur Apache peut fournir une variable d’environnement <code>REMOTE_USER</code> pour indiquer l’identifiant d’un utilisateur, si l’authentification a été effectuée au niveau d’Apache. Lorsqu’il s’agit d’une authentification de type HTTP Basic, les données sont présentées également à PHP via les variables <code>$_SERVER['PHP_AUTH_USER']</code> et <code>$_SERVER[‘PHP_AUTH_PW’]</code>.</p>
+<p>Comme on le verra plus tard, Apache n’est pas en mesure de vérifier de façon autonome les données d’identification, et devra se reposer sur Drupal et PHP pour faire le travail via de l’authentification de type HTTP Basic. Cette authentification de type HTTP Basic sera transmise avec chaque requête de page.</p>
+<p>Le HTTP Basic est supporté via Symfony, mais n’est pas considéré comme une méthode d’authentification globale (utilisable tout le temps par défaut, à l’inverse de l’authentification par cookie). Il s’agit donc au niveau de Drupal de créer un petit module qui permet d’injecter le fournisseur HTTP Basic comme un fournisseur global via un fichier <nom_module>.services.yml :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">basic_auth.authentication.basic_auth</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Drupal\basic_auth\Authentication\Provider\BasicAuth</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">arguments</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;@config.factory&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;@user.auth&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;@flood&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;@entity_type.manager&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">authentication_provider</span><span class="p p-Indicator">,</span><span class="nt"> provider_id</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;basic_auth&#39;</span><span class="p p-Indicator">,</span><span class="nt"> priority</span><span class="p">:</span><span class="w"> </span><span class="nv">100</span><span class="p p-Indicator">,</span><span class="nt"> global</span><span class="p">:</span><span class="w"> </span><span class="nv">TRUE</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+</code></pre></div>
+<p>C’est le seul réglage à effectuer pour consommer les données. Si les données d’authentification ne sont pas juste, une erreur de type 4XX est renvoyée. <strong>En revanche, il reste à la charge d’Apache de toujours envoyer les données d’identification pour qu’elles soient consommées (le header HTTP Authorization : Basic devra être présent dans toutes les requêtes), sans quoi un code 200 pourrait être renvoyé à tort.</strong></p>
+<h4 id="mise-a-disposition-des-donnees-dauthentification">Mise à disposition des données d’authentification</h4>
+<p>Apache sépare conceptuellement le processus d’authentification en deux, à savoir les mécanismes permettant de récupérer les données d’identification fournies par un navigateur web d’une part, et la comparaison avec des fournisseurs d’authentification d’autre part.</p>
+<h5 id="fournisseur-authnz-external">Fournisseur Authnz External</h5>
+<p>En ce qui concerne le fournisseur d’authentification, Apache propose plusieurs méthodes. Malheureusement, aucune méthode « native » ne convient, car la méthode reposant sur l’exploitation d’une base de données suppose la connaissance de la méthode de hash pour que le hash puisse être calculé sur les données brutes.</p>
+<p>En ce qui concerne le support FastCGI, bien que celui-ci soit séduisant sur le papier, le support FastCGI proposé par php (php-cgi) et par fpm (php-fpm) n’a pas permis d’obtenir un fonctionnement tel qu’un script défini sur la ligne de commande soit exécuté et que le fastcgi ne soit utilisé que pour fournir les données d’authentification. Il aurait donc fallu se tourner vers d’autres implémentations FastCGI, ce qui aurait supposé des développements et donc la maintenance de ces développements.</p>
+<p>En revanche, il existe un fournisseur tiers qui est le module <code>authnz_external</code>. Ce module tiers est disponible directement dans les packages de Ubuntu LTS, et de ce fait son support est assuré via la distribution. Ce module permet l’exécution d’un programme externe, auquel on peut fournir parplusieurs moyens les données d’identification. Le module utilisera le code de retour du programme pour déterminer si l’authentification a réussi (code de retour à zéro) ou échoué (code de retour différent de zéro).</p>
+<p>Comme on l’a vu précédemment dans le SSO d’Apache vers Drupal, en envoyant une requête HTTP vers Drupal avec de l’authentification Basic fournira un code de retour qui indiquera si l’authentification a réussi ou non. Il va donc s’agir d’utiliser un programme tiers pour récupérer les identifiants, effectuer la requête, et renvoyer le bon code de retour, en s’assurant que l’identifiant et le mot de passe soient toujours settés dans la requête.</p>
+<h5 id="script-shell-principal-wget-script-askpass">Script shell principal, wget, script askpass</h5>
+<p>La commande wget est une commande d’utilisation assez commune, qui permet d’effectuer en particulier une requête HTTP. Cette commande supporte le HTTPS (en authentification et en vérification du certificat serveur), et propose via l’option –use-askpass l’utilisation d’un programme « askpass » tiers pour fournir les informations d’identification via STDOUT (une exécution du programme tiers pour le nom d’utilisateur, une autre pour le mot de passe). Charge au programme askpass de récupérer le mot de passe, de vérifier sa longueur, et de le retransmettre via STDOUT s’il est non vide. Ce programme askpass devra soigner son code de retour : 0 si tout va bien ou une valeur différente s’il y a un problème. D’après mes tests, le code de retour de askpass est pris en compte par wget, et s’il est différent de 0, wget réagira également dans son code de retour . Ce point est d’ailleurs plus ou moins confirmé par la lecture du code source et l’exemple dans la page man de posix_spawnp (utilisé pour lancer le programme) :</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">//Code source wget : main.c :</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opt</span><span class="p">.</span><span class="n">use_askpass</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">question</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posix_spawnp</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="n">opt</span><span class="p">.</span><span class="n">use_askpass</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fa</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="n">environ</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">fprintf</span><span class="w"> </span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Error spawning %s: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">opt</span><span class="p">.</span><span class="n">use_askpass</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">exit</span><span class="w"> </span><span class="p">(</span><span class="n">WGET_EXIT_GENERIC_ERROR</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+Exemple dans la man page:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>The program below demonstrates the use of various functions in the POSIX spawn API. The program accepts command-line attributes that can be used to create file actions and attributes objects. The remaining command-line arguments are used as the executable name and command-line arguments of the program that is executed in the child.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>In the first run, the date(1) command is executed in the child, and the posix_spawn() call employs no file actions or attributes objects.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$ ./a.out date
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>PID of child: 7634
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Tue Feb 1 19:47:50 CEST 2011
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Child status: exited, status=0
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>In the next run, the -c command-line option is used to create a file actions object that closes standard output in the child. Consequently, date(1) fails when trying to perform output and exits with a status of 1.
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>$ ./a.out -c date
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>PID of child: 7636
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>date: write error: Bad file descriptor
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Child status: exited, status=1
+</code></pre></div>
+<p><strong>Par ailleurs, wget permet via l’option –auth-no-challenge d’envoyer directement l’authentification HTTP Basic sans requérir le challenge initial : ce point est très important,dans la mesure où une page sans authentification pourrait renvoyer également du code 200, comme vu précédemment dans l’implémentation SSO.</strong></p>
+<p>On se souviendra qu’étant donné qu’Unix crée des processus par fork, les descripteurs de fichiers disponibles dans un processus père sont également dupliqués dans un processus fils au niveau du fork. En l’occurence, mod_authnz_external permet de transmettre via la méthode « pipe » les données via STDIN, et le fork effectué par mod_authnz_external, puis le script shell principal, puis par le script wget font que le script askpass pourra lire chaque donnée sur STDIN. Cette manière de faire a un gros avantage : les données d’identification ne seront pas présentes dans l’environnement des applications, et de ce fait ne peuvent pas être récupérées aussi facilement que via de l’exécution de commande ps ou des balades dans /proc.</p>
+<p>On en arrive donc aux ébauches suivantes :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Script shell Askpass :</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">read</span> -s t
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">if</span> <span class="nb">test</span> -n <span class="s2">&quot;</span><span class="nv">$t</span><span class="s2">&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">then</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$t</span><span class="s2">&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">exit</span> <span class="m">0</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">else</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">exit</span> <span class="m">1</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">fi</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>#!/bin/bash
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>#Script shell Principal :
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>wget -d --use-askpass=&quot;/home/ubuntu/DRUPAL_COMPOSER2/AUTH/askpass.sh&quot;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>--auth-no-challenge --
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>certificate=&quot;/etc/apache2/KEYS/server.x509&quot;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>--private-key=&quot;/etc/apache2/KEYS/server.key&quot;
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>--ca-
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>certificate=&quot;/etc/apache2/KEYS/ca.x509&quot; https://drucomp2.test:444/civicrm/authx/id -O /dev/null
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>exit $?
+</code></pre></div>
+<p>Bien entendu, ces scripts peuvent encore être améliorés (par exemple vérifier le code de retour des read), rendus plus génériques pour l’installation automatique, utiliser des clefs spécifiques…</p>
+<h5 id="cible-pour-lauthentification-authx">Cible pour l’authentification : authx</h5>
+<p>A vrai dire, n’importe quelle page authentifiée pourrait faire l’affaire en tant que cible (du moment qu’elle ne modifie pas le système). Pour autant, j’ai vu deux cibles plus intéressantes que les autres, en raison des informations qu’elles peuvent fournir pour du débogage ; en effet, elles indiquent toutes les deux si l’utilisateur est logué :</p>
+<ul>
+<li>civicrm/authx/id : intégré dans CiviCRM</li>
+<li>user/login_status?_format=xml : intégré dans Drupal.</li>
+</ul>
+<p>L’intérêt de authx est qu’il fournit des informations supplémentaires par rapport à l’éventuel contact associé à l’utilisateur.</p>
+<p>En outre, il faut configurer authx, en fonction des indications données dans le guide du développeur CiviCRM :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_guards&quot;,[&quot;perm&quot;]);&#39;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_param_cred&quot;,[]);&#39;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_param_user&quot;,&quot;require&quot;);&#39;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_header_cred&quot;,[&quot;pass&quot;]);&#39;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_header_user&quot;,&quot;require&quot;);&#39;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_xheader_cred&quot;,[]);&#39;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_xheader_user&quot;,&quot;require&quot;);&#39;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_login_cred&quot;,[]);&#39;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_login_user&quot;,&quot;require&quot;);&#39;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_auto_cred&quot;,[]);&#39;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>cv.phar ev <span class="s1">&#39;Civi::settings()-&gt;set(&quot;authx_auto_user&quot;,&quot;require&quot;);&#39;</span>
+</code></pre></div>
+<h3 id="configuration-apache-mise-en-uvre-dun-reverse-proxy-et-authentification-a-deux-facteurs-ssl-et-basic">Configuration Apache : mise en œuvre d’un reverse proxy et authentification à deux facteurs (SSL et basic)</h3>
+<p>Les tests ont montré très rapidement un problème à résoudre lorsqu’on utilise qu’un seul site : si Apache cherche à s’interroger lui-même sur la validité d’une page, on arrive à une boucle récursive qui fait exploser le nombre de requêtes wget, et la requête ne peut donc pas aboutir.</p>
+<p>Le moyen le plus simple pour régler ce problème est de faire reposer l’authentification SSO non pas directement sur le virtualhost de Drupal, mais plutôt sur un reverse proxy se plaçant en amont : il suffit par exemple d’ouvrir un autre port pour le virtualhost de Drupal, mais sur 127.0.0.1, de sorte à ce que le virtualhost ne soit pas directement accessible depuis l’extérieur (par exemple : 127.0.0.1:444/tcp). Le reverse proxy, lui, va écouter sur 0.0.0.0:443/tcp.</p>
+<p>Cette configuration, outre le fait de régler le problème de boucle, pourrait également se révéler utile pour isoler le périmètre d’un problème : en effet, un administrateur pourra éventuellement faire du port forwarding via SSH pour accéder à distance au port 444 si nécessaire (à condition qu’il se connecte à distance à la machine). On peut éventuellement chercher à limiter cette possibilité en instaurant une authentification par certificat entre le reverse proxy et le virtualhost drupal. Par ailleurs, le fait d’utiliser du SSL pour cette connexion interne permet également d’éviter de laisser circuler en clair des mots de passe qui pourraient être capturés via tcpdump par exemple. Un autre type de solution technique qui aurait fait également l’affaire aurait été de l’IPSEC en mode transport : néanmoins, il semble plus maintenable d’utiliser du SSL, tout simplement car des connaissances sur ce sujet sont plus ou moins déjà exigées du fait de la nécessité actuelle de la mise en œuvre de HTTPS.</p>
+<p>On en arrive à une ébauche de configuration telle que suit. Cette ébauche pourra être améliorée en dédiant une autorité de certification d’une part aux connexions des clients vers le reverse proxy et d’autre part à la connexion entre le reverse proxy et le vhost Drupal.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Listen</span><span class="w"> </span><span class="m">127.0.0.1</span>:444<span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">127.0.0.1:443</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c">#LogLevel debug</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c">#CustomLog &quot;/var/log/apache2/debug_jm.log&quot; &quot;REMOTE_USER: %{REMOTE_USER}x {SSL_CLIENT_S_DN_CN}x --- %v %h %l %u %t \&quot;%r\&quot; %&gt;s %b&quot;</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">ServerName</span><span class="w"> </span>drucomp2.test<span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">AddExternalAuth</span><span class="w"> </span>dea<span class="w"> </span><span class="s2">&quot;/home/ubuntu/DRUPAL_COMPOSER2/AUTH/externalauth.sh&quot;</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">SetExternalAuthMethod</span><span class="w"> </span>dea<span class="w"> </span>pipe<span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">SSLEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">SSLCACertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/ca.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">SSLCertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/drucomp2.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nb">SSLCertificateKeyFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/drucomp2.pem&quot;</span><span class="w"></span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nb">SSLCipherSuite</span><span class="w"> </span>HIGH:!aNULL:!MD5<span class="w"></span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nb">SSLProxyVerify</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nb">SSLProxyMachineCertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/proxy_client.pem&quot;</span><span class="w"></span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nb">SSLProxyCACertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/ca.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="nt">&lt;Location</span><span class="w"> </span><span class="s">/</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nt">&lt;RequireAll&gt;</span><span class="w"></span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="nb">Require</span><span class="w"> </span>ssl<span class="w"></span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="nb">Require</span><span class="w"> </span>ssl-verify-client<span class="w"></span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="nb">Require</span><span class="w"> </span>valid-user<span class="w"></span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="nb">Require</span><span class="w"> </span>expr<span class="w"> </span>(%{REMOTE_USER}<span class="w"> </span>==<span class="w"> </span>%{SSL_CLIENT_S_DN_CN}<span class="w"> </span>)<span class="w"> </span>&amp;&amp;<span class="w"> </span>(-n<span class="w"> </span>%{REMOTE_USER})<span class="w"></span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="nt">&lt;/RequireAll&gt;</span><span class="w"></span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="nb">AuthType</span><span class="w"> </span>Basic<span class="w"></span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="nb">AuthName</span><span class="w"> </span><span class="s2">&quot;Apache Level&quot;</span><span class="w"></span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="nb">AuthBasicProvider</span><span class="w"> </span>external<span class="w"></span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="nb">AuthExternal</span><span class="w"> </span>dea<span class="w"></span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="nb">AuthBasicAuthoritative</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="nb">ProxyPass</span><span class="w"> </span><span class="s2">&quot;https://drucomp2.test:444/&quot;</span><span class="w"></span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="nb">ProxyPassReverse</span><span class="w"> </span><span class="s2">&quot;https://drucomp2.test:444/&quot;</span><span class="w"></span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="nt">&lt;/Location&gt;</span><span class="w"></span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="nb">SSLProxyCheckPeerCN</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="nb">SSLProxyCheckPeerName</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="nb">SSLProxyVerify</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="nb">SSLProxyEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="nb">SSLVerifyClient</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="nt">&lt;/VirtualHost&gt;</span><span class="w"></span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">127.0.0.1:444</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="c">#LogLevel debug</span><span class="w"></span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="nb">DocumentRoot</span><span class="w"> </span><span class="sx">/home/ubuntu/DRUPAL_COMPOSER2</span><span class="w"></span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="nb">ServerName</span><span class="w"> </span>drucomp2.test<span class="w"></span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="nb">php_admin_value</span><span class="w"> </span>sendmail_path<span class="w"> </span><span class="s2">&quot;/usr/bin/env catchmail -f test@mailcatcher.test&quot;</span><span class="w"></span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a><span class="nb">php_admin_value</span><span class="w"> </span>CIVICRM_DB_CACHE_CLASS<span class="w"> </span>NoCache<span class="w"></span>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/home/ubuntu/DRUPAL_COMPOSER2</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a><span class="nb">SSLRequireSSL</span><span class="w"></span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted<span class="w"></span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">All</span><span class="w"></span>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a><span class="nt">&lt;/Directory&gt;</span><span class="w"></span>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a><span class="nb">SSLEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="nb">SSLCACertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/ca.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="nb">SSLCertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/drucomp2.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="nb">SSLCertificateKeyFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/drucomp2.pem&quot;</span><span class="w"></span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a><span class="nb">SSLCipherSuite</span><span class="w"> </span>HIGH:!aNULL:!MD5<span class="w"></span>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a><span class="nb">SSLVerifyClient</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a><span class="nt">&lt;/VirtualHost&gt;</span><span class="w"></span>
+</code></pre></div>
+<p>Cette configuration présente par ailleurs déjà une configuration pour forcer une authentification par certificat SSL, avec une vérification particulière : la vérification de la correspondance entre l’utilisateur authentifié via mod_external ( dans <code>REMOTE_USER</code> ) et le common name du distinguished name du certificat SSL du client ( <code>SSL_CLIENT_S_DN_CN</code> ). A nouveau, on prend la précaution de vérifier que l’identifiant n’est pas vide, même si cela ne devrait pas arriver vu les précautions prises dans le askpass.</p>
+<p>A l’usage, avec les caches désactivés, on constate immédiatement une grosse augmentation de charge système lors de la mise en œuvre : en effet, pour toute requête entrante, il y a en réalité trois requêtes exécutées (requête entrante, requête d’autorisation, requête de traitement). Il faut voir que cette configuration empêche également certaines mises en cache au niveau de Drupal, mises en caches qui sont interdites nativement en raison de l’authentification basique.</p>
+<h2 id="authentification-par-clef-privee-et-certificat-ssl-sur-hsm">Authentification par clef privée (et certificat SSL) sur HSM</h2>
+<p>L’authentification par clef privée et certificat SSL sur Hardware Security Module est un moyen pour fournir une authentification matérielle, dans la mesure où, en général, les modules de sécurité permettent de générer des clefs privées, mais ne permettent pas de les exporter (certains modules permettent toutefois une sauvegarde chiffrée de la clef privée). Le module peut prendre plusieurs formes, dont usuellement la forme d’un token USB, similaire à une clef USB. Les fonctionnalités qui seront utilisées sur ces clefs sont les fonctionnalités PIV (Personnal Identity Verification). Généralement, les constructeurs de telles clefs fournissent des API pour accéder au matériel, qui implémentent le support de PKCS11. C’est justement sur la mise en œuvre de PKCS11 dans le serveur web que va reposer en grande partie l’authentification par clef, à la place des fichiers de clefs.</p>
+<h3 id="une-contrainte-lourde-la-gestion-dune-autorite-de-certification">Une contrainte lourde : la gestion d’une autorité de certification</h3>
+<p>Cette authentification par clef et certificat suppose une gestion des clefs rigoureuse, et implique une contrainte relativement forte : la mise en œuvre d’une infrastructure à clefs publiques (Public Key Infrastructure). Cette infrastructure suppose au minimum la présence d’une autorité de certification (CA) qui est un tiers de confiance qui va attester de l’identité liée à une clef publique. L’autorité de certification doit être gérée de manière rigoureuse pour que la confiance subsiste, et requiert donc la mise en œuvre de processus organisationnels formalisés, compris, et acceptés par toutes les parties.</p>
+<p>Le travail de l’autorité de certification est non seulement la signature des certificats, mais également la révocation des clefs compromises (Certificate Revocation List, accessible soit sous forme de fichier, soit sous forme de service de répondeur OCSP Online Certificate Status Protocol) ). Ce travail de révocation nécessite une disponibilité très rapide de l’autorité, en plus de la coopération des utilisateurs.</p>
+<p>La mise en œuvre d’une autorité de certification internalisée est donc un prérequis lourd qu’il ne faut pas sous-estimer. Il existe de la littérature spécialisée à ce sujet. Il y a éventuellement une autre piste complémentaire : s’adresser à l’ANSSI (ex :
+<a href="https://www.ssi.gouv.fr/uploads/2015/07/catalogue-cfssi-anssi_2020-2021.pdf">https://www.ssi.gouv.fr/uploads/2015/07/catalogue-cfssi-anssi_2020-2021.pdf</a> ) ou aux services du ministère de l’intérieur si une « externalisation » pourrait être envisagée.</p>
+<h3 id="preparation-dun-hsm-deux-exemples">Préparation d’un HSM : deux exemples</h3>
+<p>Deux exemples peuvent être explorés : l’utilisation d’une clef usb Yubikey (ex:Yubikey 4), et l’utilisation d’une implémentation d’émulation logicielle : SoftHSM(v2). L’intérêt de l’émulation est qu’il peut servir à modéliser les services sur les machines de développ ement sans disposer de matériel particulier.</p>
+<h4 id="clef-yubikey">Clef Yubikey</h4>
+<p>L’exemple de la clef Yubikey n’est pas un exemple « anodin », dans la mesure où Yubico (<a href="https://www.yubico.com/?lang=fr">https://www.yubico.com/?lang=fr</a>) supporte l’environnement Linux (les packages de gestion des Yubikeys sont disponibles en standard dans Ubuntu) et fournit une documentation sur son site web (<a href="https://developers.yubico.com/PIV/">https://developers.yubico.com/PIV/</a>). Les prix des clefs sur le site de Yubico semblent accessibles (<a href="https://www.yubico.com/fr/store/">https://www.yubico.com/fr/store/</a> : à partir de 45€HT pour une clef). J’ai une clef Yubikey 4 que j’avais achetée il y a plusieurs années pour expérimenter. </p>
+<p>La première chose à faire serait d’abord de personnaliser les codes d’accès de la clef. Deux codes sont généralement utilisables : le PIN utilisateur et le PIN de l’officier de sécurité (ou code PUK). Par ailleurs, dans le cadre de la clef Yubikey, personnaliser la clef de Management serait également judicieux (voir <a href="https://developers.yubico.com/PIV/Introduction/Admin_access.html">https://developers.yubico.com/PIV/Introduction/Admin_access.html</a> ). Je n’ai néanmoins pas effectué ces tâches.</p>
+<p>Les fonctionnalités PIV sont gérées par un outil spécifique : <code>yubico-piv-tool</code>, qui est un outil en ligne de commande. La première chose est de générer un couple clef publique / clef privée pour l’usage d’authentification. Ces clefs étant multi-usages, il convient tout d’abord de déterminer l'emplacement mémoire (slot) qui devra être utilisé, en se référant à la documentation (<a href="https://developers.yubico.com/PIV/Introduction/Certificate_slots.html">https://developers.yubico.com/PIV/Introduction/Certificate_slots.html</a>) : ledit slot est le 9a. L’outil
+yubico-piv-tool permettrait par ailleurs également de changer pin, puk et clef de management. Un autre outil permet de configurer les fonctionnalités disponibles : <code>ykman</code>, et permet explicitement de lister les périphériques et les services activés.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>yubico-piv-tool -a generate -s 9a -A RSA2048
+</code></pre></div>
+La commande affiche ensuite la clef publique générée. On peut la retrouver via la génération d’une requête de certificat, qui est l’étape suivante :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>yubico-piv-tool -a verify-pin -a request-certificate -s 9a -S<span class="s1">&#39;/CN=admin/OU=test/O=drucomp2.test&#39;</span> -o cert.req
+</code></pre></div>
+<p>On notera la syntaxe du sujet du certificat, qui utilise des slashes à la place des virgules.</p>
+<p>On peut ensuite signer la requête de certificat, comme par exemple avec :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>openssl x509 -req -in YUBICO/cert.req -out YUBICO/cert.x509 -days <span class="m">365</span> -CA ca.x509 -CAkey ca.key -CAserial ca.srl
+</code></pre></div>
+<p>Il n’y a ensuite plus qu’à importer le certificat :</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>yubico-piv-tool -s9a -aimport-certificate -i cert.x509
+</code></pre></div>
+A ce moment, la clef est prête pour attester d’une identité – à condition de faire confiance à l’autorité de certification qui a signé le certificat.</p>
+<h4 id="softhsm2">SoftHSM2</h4>
+<p>SoftHSM2 permet de fournir une émulation de matériel de sécurité, utile pour apprendre. Néanmoins, le fait que ce soit une émulation logicielle a un impact important : les droits sur les fichiers s’appliquent, ce qui n’est pas le cas avec du matériel : ceci a posé problème pour l’accès aux clefs via apache, lorsque www-data n’avait pas les droits sur les fichiers, en lançant une erreur assez générique (object invalid handle). Le débuggage de ce problème a nécessité l’installation des symboles de débuggage d’apache, la modification du nombre de workers (pour passer à 1), et la
+récupération des codes sources des librairies (via apt source) pour pouvoir attacher à gdb le worker apache et faire du pas à pas dans le code source pour arriver jusqu’à la source du problème.</p>
+<p>La mise en œuvre de SoftHSM2 est assez ressemblante à celle de la Yubikey. La première des choses est d’identifier les slots disponibles :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>softhsm2-util--show-slots
+</code></pre></div>
+<p>De là, il faut initialiser les pins de l’utilisateur et du security officer :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>softhsm2-util --init-token --slot <span class="m">0</span> --so-pin <span class="m">12345678</span> --pin <span class="m">123456</span> --label serverhsm
+</code></pre></div>
+<p>Générer la paire de clefs : on utilise pkcs11-tool (package opensc)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pkcs11-tool --module /usr/lib/arm-linux-gnueabihf/softhsm/libsofthsm2.so --login --keypairgen --key-type rsa:2048 --usage-sign --token-label serverhsm --label serverkey
+</code></pre></div>
+<p>De là, il faut trouver l’URI PKCS11 de la clef utilisée : p11tool (package gnutls-bin) : on récupère d’abord la liste des tokens, avec leur URI, puis on liste celles du support qui nous intéresse</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>p11tool --list-tokens
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>p11tool --login --list-all pkcs11:model<span class="o">=</span>SoftHSM%20v2<span class="p">;</span><span class="nv">manufacturer</span><span class="o">=</span>SoftHSM%20project<span class="p">;</span><span class="nv">serial</span><span class="o">=</span>75bb53774ddd60dc<span class="p">;</span><span class="nv">token</span><span class="o">=</span>serverhsm
+</code></pre></div>
+<p>Générer la requête de certificat :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>openssl req -new -engine pkcs11 -keyform engine -key <span class="s2">&quot;pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=75bb53774ddd60dc;token=serverhsm;object=serverkey;type=private&quot;</span> -subj <span class="s2">&quot;/C=FR/ST=France/L=Strasbourg/O=TEST/OU=INFRA/CN=drucomp2.test&quot;</span> -out serverhsm.req
+</code></pre></div>
+<p>Il ne reste plus que la signature du certificat :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>openssl x509 -req -in serverhsm.req -out serverhsm.x509 -extfile ext -ext ext -CA ca.x509 -CAkey ca.key -CAserial ca.srl -sha256 -days <span class="m">365</span>
+</code></pre></div>
+<p>Et l’import du certificat :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>pkcs11-tool --module /usr/lib/arm-linux-gnueabihf/softhsm/libsofthsm2.so serverhsm --label servercert --write-object serverhsm.x509 --type cert --login --token-label
+</code></pre></div>
+<p>Comme indiqué précédemment, il faudra faire attention à ce que les fichiers soient accessibles par l’utilisateur qui les utilisera.</p>
+<h3 id="mise-en-uvre-du-hsm-pour-les-connexions-web">Mise en œuvre du HSM pour les connexions web</h3>
+<p>Le HSM va être utilisé à deux endroits : au niveau du serveur web, et au niveau du navigateur web.</p>
+<h4 id="prise-en-charge-par-apache">Prise en charge par Apache</h4>
+<p>Apache dispose de deux supports pour la prise en charge de PKCS11 : le premier support est le module gnutls. Ce module est déjà ancien, et les tests effectués montrent que ce module ne met pas à disposition les données comme le DN du sujet du certificat au niveau des directives Require : de ce fait, ce module ne peut pas faire l’affaire.</p>
+<p>Le deuxième module est le module ssl : ce module a vu un début de support de PKCS11 depuis la version 2.4.42. Ce support est donc récent, car la version d’Apache fournie par Ubuntu 20.04 LTS est la version 2.4.41, ne permettant pas le support de la fonctionnalité. De ce fait, il est nécessaire de passer temporairement à la version 21.04 d’Ubuntu, qui embarque Apache 2.4.46 ; passer à la version normale signifie également disposer d’une durée de support réduite à 9 mois, au lieu de 5 ans.</p>
+<p>Le support est minimaliste : il concerne le certificat et la clef du serveur : les directives de configuration peuvent accepter depuis 2.4.42 de la possibilité de saisir des URI PKCS11, URI que l’on peut déterminer via p11tool. Ce point est problématique pour le reverse proxy, qui, lui, ne
+supporte pas d’URI PKCS11 au niveau de la directive <code>SSLProxyMachineCertificateFile</code>. On arrive à comprendre ce non-support en raison de l’approche de cette directive : stocker l’ensemble des certificats dans un path ou dans un fichier pour permettre au proxy de s’authentifier auprès des serveurs distants, ce qui est incompatible avec les URI PKCS11, qui, elles, sont plutôt utilisées pour adresser des ressources spécifiques.</p>
+<p>Dans le cas présent, un contournement est possible via iptables : en effet, on peut supposer que l’instance qui hébergera le reverse proxy et le site seront situés dans une même instance d’Apache, et donc auront à disposition le même kernel. De ce fait, on peut mettre à profit une fonctionnalité de
+marquage des paquets réseaux d’iptables, associée à une condition sur l’origine des paquets : on marquera sur la chaîne OUTPUT, sur le loopback, les paquets issus de www-data destinés au site drupal proprement dit, et on n’acceptera sur la chaîne INPUT, à l’entrée du loopback et à destination du site drupal, que des paquets dûment marqués. Un exemple de configuration est tel que suit :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>iptables -A OUTPUT -o lo -p tcp --dst <span class="m">127</span>.0.0.1 --src <span class="m">127</span>.0.0.1 --dport <span class="m">444</span> -m owner --uid-owner www-data -j MARK --set-mark <span class="m">33</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>iptables -A INPUT -i lo -p tcp --dst <span class="m">127</span>.0.0.1 --src <span class="m">127</span>.0.0.1 --dport <span class="m">444</span> -m mark --mark <span class="m">33</span> -j ACCEPT
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>iptables -A INPUT -p tcp --dport <span class="m">444</span> -j DROP
+</code></pre></div>
+<p>Les paquets qui arrivent au serveur Drupal seront donc identifiés indirectement, ce qui permet ne plus avoir besoin du certificat SSL pour l’authentification au niveau de Drupal. En revanche, le chiffrement des données reste toutefois requis.</p>
+<p>On en arrive donc à une configuration d’exemple comme la suivante :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">Listen</span><span class="w"> </span><span class="m">127.0.0.1</span>:444<span class="w"></span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">127.0.0.1:443</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">LogLevel</span><span class="w"> </span><span class="k">debug</span><span class="w"></span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nb">CustomLog</span><span class="w"> </span><span class="s2">&quot;/var/log/apache2/debug_jm.log&quot;</span><span class="w"> </span><span class="s2">&quot;REMOTE_USER: %{REMOTE_USER}x SUBJECT_CN: % {SSL_CLIENT_S_DN_CN}x --- %v %h %l %u %t \&quot;%r\&quot; %&gt;s %b&quot;</span><span class="w"></span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nb">ServerName</span><span class="w"> </span>drucomp2.test<span class="w"></span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nb">AddExternalAuth</span><span class="w"> </span>dea<span class="w"> </span><span class="s2">&quot;/home/ubuntu/DRUPAL_COMPOSER2/AUTH/externalauth.sh&quot;</span><span class="w"></span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nb">SetExternalAuthMethod</span><span class="w"> </span>dea<span class="w"> </span>pipe<span class="w"></span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nb">SSLEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="nb">SSLCACertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/ca.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nb">SSLCertificateFile</span><span class="w"> </span><span class="s2">&quot;pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=75bb53774ddd60dc;token=serverhsm;object=servercert;type=cert&quot;</span><span class="w"></span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="nb">SSLCertificateKeyFile</span><span class="w"> </span><span class="s2">&quot;pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=75bb53774ddd60dc;token=serverhsm;object=serverkey;type=private&quot;</span><span class="w"></span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="nb">SSLCipherSuite</span><span class="w"> </span>HIGH:!aNULL:!MD5<span class="w"></span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="nb">SSLProxyVerify</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="c">#SSLProxyMachineCertificateFile &quot;/etc/apache2/KEYS/proxy_client.pem&quot;</span><span class="w"></span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="nb">SSLProxyCACertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/ca.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="nt">&lt;Location</span><span class="w"> </span><span class="s">/</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="nt">&lt;RequireAll&gt;</span><span class="w"></span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="nb">Require</span><span class="w"> </span>ssl<span class="w"></span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="nb">Require</span><span class="w"> </span>ssl-verify-client<span class="w"></span>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="nb">Require</span><span class="w"> </span>valid-user<span class="w"></span>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="nb">Require</span><span class="w"> </span>expr<span class="w"> </span>(%{REMOTE_USER}<span class="w"> </span>==<span class="w"> </span>%{SSL_CLIENT_S_DN_CN}<span class="w"> </span>)<span class="w"> </span>&amp;&amp;<span class="w"> </span>(-n<span class="w"> </span>%{REMOTE_USER})<span class="w"></span>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="nt">&lt;/RequireAll&gt;</span><span class="w"></span>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="nb">AuthType</span><span class="w"> </span>Basic<span class="w"></span>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="nb">AuthName</span><span class="w"> </span><span class="s2">&quot;Apache Level&quot;</span><span class="w"></span>
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="nb">AuthBasicProvider</span><span class="w"> </span>external<span class="w"></span>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="nb">AuthExternal</span><span class="w"> </span>dea<span class="w"></span>
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a><span class="nb">AuthBasicAuthoritative</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a><span class="nb">ProxyPass</span><span class="w"> </span><span class="s2">&quot;https://drucomp2.test:444/&quot;</span><span class="w"></span>
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a><span class="nb">ProxyPassReverse</span><span class="w"> </span><span class="s2">&quot;https://drucomp2.test:444/&quot;</span><span class="w"></span>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a><span class="nt">&lt;/Location&gt;</span><span class="w"></span>
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a><span class="nb">SSLProxyCheckPeerCN</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a><span class="nb">SSLProxyCheckPeerName</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a><span class="nb">SSLProxyVerify</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a><span class="nb">SSLProxyEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a><span class="nb">SSLVerifyClient</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a><span class="nt">&lt;/VirtualHost&gt;</span><span class="w"></span>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">127.0.0.1:444</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a><span class="nb">CustomLog</span><span class="w"> </span><span class="s2">&quot;/var/log/apache2/debug_jm_core.log&quot;</span><span class="w"> </span><span class="s2">&quot;REMOTE_USER: %{REMOTE_USER}x SUBJECT_CN:%{SSL_CLIENT_S_DN_CN}x --- %v %h %l %u %t \&quot;%r\&quot; %&gt;s %b&quot;</span><span class="w"></span>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a><span class="nb">LogLevel</span><span class="w"> </span><span class="k">debug</span><span class="w"></span>
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a><span class="nb">DocumentRoot</span><span class="w"> </span><span class="sx">/home/ubuntu/DRUPAL_COMPOSER2</span><span class="w"></span>
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a><span class="nb">ServerName</span><span class="w"> </span>drucomp2.test<span class="w"></span>
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a><span class="nb">php_admin_value</span><span class="w"> </span>sendmail_path<span class="w"> </span><span class="s2">&quot;/usr/bin/env catchmail -f test@mailcatcher.test&quot;</span><span class="w"></span>
+<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a><span class="nb">php_admin_value</span><span class="w"> </span>CIVICRM_DB_CACHE_CLASS<span class="w"> </span>NoCache<span class="w"></span>
+<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/home/ubuntu/DRUPAL_COMPOSER2</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a><span class="nb">SSLRequireSSL</span><span class="w"></span>
+<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted<span class="w"></span>
+<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a><span class="nb">AllowOverride</span><span class="w"> </span><span class="k">All</span><span class="w"></span>
+<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a><span class="nt">&lt;/Directory&gt;</span><span class="w"></span>
+<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a><span class="nb">SSLEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a><span class="nb">SSLCACertificateFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/KEYS/ca.x509&quot;</span><span class="w"></span>
+<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a><span class="nb">SSLCertificateFile</span><span class="w"> </span><span class="s2">&quot;pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=75bb53774ddd60dc;token=serverhsm;object=servercert;type=cert&quot;</span><span class="w"></span>
+<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a><span class="nb">SSLCertificateKeyFile</span><span class="w"> </span><span class="s2">&quot;pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=75bb53774ddd60dc;token=serverhsm;object=serverkey;type=private&quot;</span><span class="w"></span>
+<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a><span class="nb">SSLCipherSuite</span><span class="w"> </span>HIGH:!aNULL:!MD5<span class="w"></span>
+<a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a><span class="c">#SSLVerifyClient require</span><span class="w"></span>
+<a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a><span class="nt">&lt;/VirtualHost&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="prise-en-charge-hsm-au-niveau-du-navigateur">Prise en charge HSM au niveau du navigateur</h4>
+<p>Firefox, dans ses préférences, dispose d’un bouton pour appeler une interface de gestion des périphériques de sécurité. Il suffit ensuite de préciser les modules d’interfaçage PKCS11 à charger (par exemple /usr/lib/arm-linux-gnueabihf/softhsm/libsofthsm2.so ou /usr/lib/arm-linux-gnueabihf/libykcs11.so ). Ensuite, les certificats sont rendus disponibles du moment que l’utilisateur se connecte aux tokens.</p>
+<p>En ce qui concerne chromium, la situation est plus compliquée : en théorie, chromium chercherait des informations dans une base NSS située dans $HOME/.pki/nssdb. Cette base peut être gérée par l’utilitaire modutil (package libnss3-tools), pour demander à chromium de charger les mêmes
+modules que ceux présentés à firefox. Néanmoins, la version de chromium livrée avec Ubuntu est une version dans le format « snap » ; et le package, tel que configuré, ne permet pas d’accéder au répertoire nssdb. Ce problème
+est répertorié chez Ubuntu
+(<a href="https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1899478">https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1899478</a>
+et
+<a href="https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1859643">https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1859643</a> ). De plus, le montage de l’interface home dans un snap devrait se limiter aux fichiers non cachés (donc qui ne commence pas par un point ) ; du coup, cela rend le problème plus difficile à résoudre, car le chemin de la BD NSS
+semble être en dur dans le code de chromium (<a href="https://github.com/chromium/chromium/blob/master/crypto/nss_util.cc">https://github.com/chromium/chromium/blob/master/crypto/nss_util.cc</a> ).</p>
+<p>En conclusion, on remarque que les bénéfices de l’identification par certificat peuvent être appréciables, mais que ces bénéfices ne peuvent être acquis qu’en mettant les ressources techniques, humaines, et matérielles en face. Enfin, on n’oubliera pas que l’authentification par certificat peut également être mise en œuvre dans certaines solutions VPN, ce qui signifie que cette technologie peut servir à plusieurs niveaux. Des recherches complémentaires sur la gestion de CA et sur les VPN (au sens large) pourraient donc être judicieuses.</p>
+<h2 id="addendum-mise-en-cache-de-lauthentification">Addendum : mise en cache de l'authentification</h2>
+<p>L'intégration de l'authentification issue de Drupal avec Apache est coûteuse : pour toute requête envoyée au reverse-proxy, deux requêtes peuvent être envoyées au serveur web interne : </p>
+<ul>
+<li>la requête pour vérifier les identifiants</li>
+<li>si l'authentification est valide, la requête de base pour effectuer le travail proprement dit.</li>
+</ul>
+<p>En pratique, le maquettage a montré que ce système est particulièrement impactant pour le bon fonctionnement du système, car il ne faut pas oublier que toute ressource va être soumise à authentification - dont les images. Il arrive donc que plus de resources soient nécessaires pour l'authentification que pour le travail demandé.</p>
+<p>Il ne faut par ailleurs pas oublier que dans le cadre d'un déploiement à grande échelle, cette consommation de ressources va impliquer plus de ressources nécessaires au fonctionnement du système, et donc des coûts plus importants.</p>
+<p>Il s'avère que <code>mod_authnz_external</code> dispose d'un nécessaire pour utiliser <code>mod_authn_socache</code> pour disposer d'un cache d'identifiants. Le cache utilisé peut par exemple être <code>mod_socache_shmcb</code>, qui va stocker les identifiants dans de la mémoire partagée.</p>
+<p>Vérification faite dans le code de <code>authnz_external</code>, une fonction de la libapr est utilisée pour générer l'entrée en cache. Au niveau du cache, ce sera une empreinte SHA1 qui va être stockée. La libapr permettrait quatre types d'identifiants :</p>
+<ul>
+<li>en clair</li>
+<li>bcrypt</li>
+<li>md5</li>
+<li>sha1</li>
+</ul>
+<p>L'utilisation de SHA1 n'est plus considérée comme sûre,ce qui amène à déconseiller l'utilisation du cache à cause de ce stockage du mot de passe. Toutefois, si l'authentification réalisée est une authentification à facteurs multiples (dont une authentification forte), on pourrait toutefois considérer que l'importante du mot de passe n'est plus aussi forte, et que le risque devient un peu plus acceptable - même si une décision politique doit clairement être prise à ce sujet avant mise en production.</p>
+<p>En ce qui concerne la mise en cache de l'authentification, on peut considérer l'exemple suivant :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">AuthnCacheEnable</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">AuthnCacheSOCache</span><span class="w"> </span>shmcb<span class="w"></span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">0.0.0.0:443</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nb">ServerName</span><span class="w"> </span>${SERVERNAME}<span class="w"></span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nb">AddExternalAuth</span><span class="w"> </span>dea<span class="w"> </span><span class="s2">&quot;/AUTH/externalauth.sh&quot;</span><span class="w"></span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nb">SetExternalAuthMethod</span><span class="w"> </span>dea<span class="w"> </span>pipe<span class="w"></span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="nb">SSLEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nb">SSLCertificateFile</span><span class="w"> </span>${SERVER_CERT}<span class="w"></span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="nb">SSLCertificateKeyFile</span><span class="w"> </span>${SERVER_KEY}<span class="w"></span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="nb">SSLCipherSuite</span><span class="w"> </span>HIGH:!aNULL:!MD5<span class="w"></span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="nb">SSLProxyVerify</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="nb">SSLProxyMachineCertificateFile</span><span class="w"> </span>${PROXY_MACHINE_CERT}<span class="w"></span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="nb">SSLProxyCACertificateFile</span><span class="w"> </span>${PROXY_CA}<span class="w"></span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="nb">SSLProxyCheckPeerCN</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="nb">SSLProxyCheckPeerName</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="nb">SSLProxyVerify</span><span class="w"> </span>require<span class="w"></span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="nb">SSLProxyEngine</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="nb">SSLOptions</span><span class="w"> </span>+StrictRequire<span class="w"></span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="nb">SSLVerifyClient</span><span class="w"> </span><span class="k">none</span><span class="w"></span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="nt">&lt;Location</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span><span class="w"></span>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="nb">AuthExternalContext</span><span class="w"> </span>${AUTH_CONTEXT}<span class="w"></span>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="nt">&lt;RequireAll&gt;</span><span class="w"></span>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="nb">Require</span><span class="w"> </span>ssl<span class="w"></span>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="nb">Require</span><span class="w"> </span>valid-user<span class="w"></span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="nt">&lt;/RequireAll&gt;</span><span class="w"></span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="nb">AuthType</span><span class="w"> </span>Basic<span class="w"></span>
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="nb">AuthName</span><span class="w"> </span><span class="s2">&quot;Civiparoisse&quot;</span><span class="w"></span>
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="nb">AuthBasicProvider</span><span class="w"> </span>socache<span class="w"> </span>external<span class="w"></span>
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="nb">AuthnCacheProvideFor</span><span class="w"> </span>external<span class="w"></span>
+<a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="nb">AuthExternalProvideCache</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="nb">AuthnCacheContext</span><span class="w"> </span>server<span class="w"></span>
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="nb">AuthnCacheTimeout</span><span class="w"> </span><span class="m">300</span><span class="w"></span>
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="nb">AuthExternal</span><span class="w"> </span>dea<span class="w"></span>
+<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a><span class="nb">AuthBasicAuthoritative</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="nt">&lt;/Location&gt;</span><span class="w"></span>
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="nb">ProxyPass</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="s2">&quot;https://${INTERN_SERVERNAME}:444/&quot;</span><span class="w"></span>
+<a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="nt">&lt;/VirtualHost&gt;</span><span class="w"></span>
+</code></pre></div>
+<p>On constate la directive <code>AuthExternalProvideCache</code> qui va demander à <code>authnz_external</code> de remplir le cache, et on constate qu'on a un provider d'authentification supplémentaire : socache, avec un timeout de 300secondes. Le contexte va agir sur la clef. On a encore deux directives globales qui définissent le backend de cache utilisé, et l'activation du cache.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Index
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="docker.html" class="md-footer__link md-footer__link--next" aria-label="Next: Description générale" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Description générale
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
